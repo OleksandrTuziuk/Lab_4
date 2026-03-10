@@ -29,7 +29,7 @@ public class Word implements SentencePart, Comparable<Word> {
      */
     public Word(String w) {
         final char[] letters = w.toCharArray();
-        Letter[] word = new Letter[w.length()];
+        final Letter[] word = new Letter[w.length()];
         for (int i = 0; i < w.length(); i++) {
             word[i] = new Letter(letters[i]);
         }
