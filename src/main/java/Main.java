@@ -21,7 +21,7 @@ public class Main {
             break;
         }
 
-        Text text = new Text(string);
+        final Text text = new Text(string);
         System.out.println(text);
         System.out.println(text.sort(l));
     }

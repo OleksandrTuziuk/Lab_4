@@ -28,7 +28,7 @@ public class Word implements SentencePart, Comparable<Word> {
      * @param w the string representing the word
      */
     public Word(String w) {
-        char[] letters = w.toCharArray();
+        final char[] letters = w.toCharArray();
         Letter[] word = new Letter[w.length()];
         for (int i = 0; i < w.length(); i++) {
             word[i] = new Letter(letters[i]);
@@ -46,7 +46,7 @@ public class Word implements SentencePart, Comparable<Word> {
      */
     @Override
     public String toString() {
-        String[] text = new String[content.length];
+        final String[] text = new String[content.length];
 
         for (int i = 0; i < content.length; i++) {
             text[i] = content[i].toString();

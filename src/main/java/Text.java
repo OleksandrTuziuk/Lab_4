@@ -32,7 +32,7 @@ public class Text {
      * @param t the string representing the text
      */
     public Text(String t) {
-        String[] text = t.split("\\.");
+        final String[] text = t.split("\\.");
         this.content = new Sentence[text.length];
         for (int i = 0; i < text.length; i++) {
             this.content[i] = new Sentence(text[i]);
@@ -50,7 +50,7 @@ public class Text {
      */
     @Override
     public String toString() {
-        String[] text = new String[content.length];
+        final String[] text = new String[content.length];
 
         for (int i = 0; i < content.length; i++) {
             text[i] = content[i].toString();
@@ -74,7 +74,7 @@ public class Text {
      * @return a new {@code Text} object containing the sorted words
      */
     public Text sort(char l) {
-        List<Word> cont = new ArrayList<>();
+        final List<Word> cont = new ArrayList<>();
         for (Sentence s : content) {
             for (SentencePart w : s.content) {
                 if (w instanceof Word) {
@@ -85,13 +85,13 @@ public class Text {
         }
         Collections.sort(cont);
 
-        String[] words = new String[cont.size()];
+        final String[] words = new String[cont.size()];
 
         for (int i = 0; i < cont.size(); i++) {
             words[i] = cont.get(i).toString();
         }
 
-        String text = String.join(" ", words);
+        final String text = String.join(" ", words);
 
         return new Text(text);
     }

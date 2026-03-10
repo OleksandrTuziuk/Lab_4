@@ -24,7 +24,7 @@ import java.util.List;
  * @author OleksandrTuziuk
  * @version 1.0
  */
-public class Sentence{
+public class Sentence {
     /**
      * Array containing the parts of the sentence.
      * Each element is either a {@link Word} or a {@link SpecialSymbol}.
@@ -39,14 +39,14 @@ public class Sentence{
      * @param s the string representing the sentence
      */
     public Sentence(String s) {
-        String[] sentence = s.split(" ");
-        List<SentencePart> sentenceParts = new ArrayList<>();
+        final String[] sentence = s.split(" ");
+        final List<SentencePart> sentenceParts = new ArrayList<>();
         for (String word : sentence) {
             if (word.length() > 1) {
-                char lastSymbol = word.toCharArray()[word.length() - 1];
+                final char lastSymbol = word.toCharArray()[word.length() - 1];
                 if (Character.isAlphabetic(lastSymbol)) {
                     sentenceParts.add(new Word(word));
-                } else{
+                } else {
                     sentenceParts.add(new Word(word.substring(0, word.length() - 1)));
                     sentenceParts.add(new SpecialSymbol(lastSymbol));
                 }
@@ -75,7 +75,7 @@ public class Sentence{
      */
     @Override
     public String toString() {
-        String[] text = new String[content.length];
+        final String[] text = new String[content.length];
 
         for (int i = 0; i < content.length; i++) {
             text[i] = content[i].toString();
